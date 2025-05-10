@@ -116,6 +116,53 @@
     #audio-player button:hover {
       color: #0056a3;
     }
+
+    #volume-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    #volume-icon {
+      width: 20px;
+      height: 20px;
+    }
+
+    #volume-control {
+      width: 100px; /* Make the slider smaller */
+      background-color: #ddd; /* Light gray background */
+      border-radius: 5px; /* Rounded corners */
+      outline: none;
+      cursor: pointer;
+    }
+
+    #volume-control::-webkit-slider-thumb {
+      background-color: #0077cc; /* Blue thumb for contrast */
+      border: 1px solid #0056a3;
+      border-radius: 50%;
+      width: 12px;
+      height: 12px;
+      cursor: pointer;
+    }
+
+    #volume-control::-moz-range-thumb {
+      background-color: #0077cc;
+      border: 1px solid #0056a3;
+      border-radius: 50%;
+      width: 12px;
+      height: 12px;
+      cursor: pointer;
+    }
+
+    #volume-control::-ms-thumb {
+      background-color: #0077cc;
+      border: 1px solid #0056a3;
+      border-radius: 50%;
+      width: 12px;
+      height: 12px;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
@@ -142,7 +189,10 @@
       <button id="next" title="Next Track"><i class="fas fa-forward"></i></button>
     </div>
     <input type="range" id="progress-bar" value="0" max="100">
-    <input type="range" id="volume-control" min="0" max="1" step="0.1" value="1" title="Volume">
+    <div id="volume-container">
+      <img src="volume.png" alt="Volume Icon" id="volume-icon">
+      <input type="range" id="volume-control" min="0" max="1" step="0.1" value="1" title="Volume">
+    </div>
   </div>
 
   <section id="projects">
