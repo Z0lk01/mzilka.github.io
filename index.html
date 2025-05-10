@@ -9,9 +9,11 @@
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 2rem;
-      background-color: #505458;
+      background-color: #ffffff;
       color: #333;
+      
     }
+    
     header {
       text-align: center;
       margin-bottom: 2rem;
@@ -38,14 +40,29 @@
     a:hover {
       text-decoration: underline;
     }
+    
   </style>
 </head>
 <body>
   <header>
     <h1>Milan Zilka</h1>
-    <p>Vítam Vás na mojom GitHub portfóliu. Nižšie nájdete ukážky mojich fun projektov.</p>
+    <p>Vítam Vás na mojej GitHub stránke. Nižšie nájdete ukážky mojich fun projektov.</p>
   </header>
-
+  <div id="audio-player">
+  <h2 id="track-title">Názov skladby</h2>
+  <audio id="audio" src="audio/NIVIRO - NCS New Years Mix 2024 (with NIVIRO) [NCS Release].mp3"></audio>
+  <div>
+    <button id="prev">⏮️</button>
+    <button id="play-pause">▶️</button>
+    <button id="next">⏭️</button>
+    </div>
+</div>
+<p>
+  Song: NCS New Years Mix 2024 (with NIVIRO)<br>
+  Music provided by NoCopyrightSounds<br>
+  Free Download/Stream: http://ncs.io/NYE24<br>
+  Watch: http://ncs.lnk.to/NYE24AT/youtube <br>
+</p>
   <section>
     <h2>Projekty</h2>
     <ul>
@@ -59,5 +76,54 @@
       </li>
     </ul>
   </section>
+  <script>
+  const audio = document.getElementById('audio');
+  const title = document.getElementById('track-title');
+  const playPauseBtn = document.getElementById('play-pause');
+  const prevBtn = document.getElementById('prev');
+  const nextBtn = document.getElementById('next');
+
+  const tracks = [
+    { title: 'NCS New Years Mix 2024', src: 'audio/NIVIRO - NCS New Years Mix 2024 (with NIVIRO) [NCS Release].mp3' },
+    
+  ];
+  let currentTrack = 0;
+
+  function loadTrack(index) {
+    const track = tracks[index];
+    audio.src = track.src;
+    title.textContent = track.title;
+  }
+
+  function playPause() {
+    if (audio.paused) {
+      audio.play();
+      playPauseBtn.textContent = '⏸️';
+    } else {
+      audio.pause();
+      playPauseBtn.textContent = '▶️';
+    }
+  }
+
+  function prevTrack() {
+    currentTrack = (currentTrack - 1 + tracks.length) % tracks.length;
+    loadTrack(currentTrack);
+    audio.play();
+  }
+
+  function nextTrack() {
+    currentTrack = (currentTrack + 1) % tracks.length;
+    loadTrack(currentTrack);
+    audio.play();
+  }
+
+  playPauseBtn.addEventListener('click', playPause);
+  prevBtn.addEventListener('click', prevTrack);
+  nextBtn.addEventListener('click', nextTrack);
+
+  // Na začiatku načítaj prvú skladbu
+  loadTrack(currentTrack);
+</script>
+
 </body>
 </html>
