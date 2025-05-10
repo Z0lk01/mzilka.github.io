@@ -54,23 +54,20 @@
     }
 
     #projects {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-      justify-content: center;
+      display: block; /* Change to block layout */
+      width: 30%; /* Set the width of the section */
+      margin: 0; /* Remove default margin */
+      padding: 1rem; /* Add some padding */
+      float: left; /* Move the section to the left side */
     }
 
     .project-card {
       border: 1px solid #ddd;
       padding: 15px;
       border-radius: 8px;
-      width: 300px;
       background-color: white;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    }
-
-    .project-card h3 {
-      margin-top: 0;
+      margin-bottom: 20px; /* Add spacing between project cards */
     }
 
     footer {
@@ -196,7 +193,10 @@
   </div>
 
   <section id="projects">
-    <h2>Projekty</h2>
+    <h2>
+      <img src="projects.png" alt="Projects Icon" style="width: 24px; height: 24px; vertical-align: middle; margin-right: 8px;">
+      Projekty
+    </h2>
     <div class="project-card">
       <h3>Tracker Demo</h3>
       <p>A simple tracker application to manage tasks.</p>
@@ -211,13 +211,13 @@
 
   <section id="contact">
     <h2>Kontakt</h2>
-    <p>Email: <a href="mailto:milan.zilka@example.com">milan.zilka@example.com</a></p>
+    <p>Email: <a href="mailto:milan.zilk@gmail.com">milan.zilka@example.com</a></p>
   </section>
 
   <footer>
     <p>© 2025 Milan Zilka</p>
-    <a href="https://github.com/mzilka" target="_blank">GitHub</a> |
-    <a href="https://www.linkedin.com/in/mzilka" target="_blank">LinkedIn</a>
+    <a href="https://github.com/Z0lk01" target="_blank">GitHub</a> |
+    <a href="https://www.linkedin.com/in/milan-%C5%BEilka-735564294/" target="_blank">LinkedIn</a>
   </footer>
 
   <script>
