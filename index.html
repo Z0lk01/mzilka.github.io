@@ -8,126 +8,204 @@
     body {
       font-family: Arial, sans-serif;
       margin: 0;
-      padding: 2rem;
-      background-color: #ffffff;
+      padding: 0;
+      background-color: #f4f4f9;
       color: #333;
-      
     }
-    
+
     header {
       text-align: center;
-      margin-bottom: 2rem;
+      padding: 2rem;
+      background-color: #0077cc;
+      color: white;
     }
-    h1 {
-      font-size: 2em;
+
+    header h1 {
+      font-size: 2.5em;
       margin-bottom: 0.5em;
     }
-    ul {
-      list-style: none;
-      padding: 0;
+
+    header p {
+      font-size: 1.2em;
+      margin-bottom: 1em;
     }
-    li {
-      background: white;
-      margin-bottom: 1rem;
-      padding: 1rem;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+
+    nav {
+      text-align: center;
+      margin-bottom: 20px;
+      background-color: #0056a3;
+      padding: 10px 0;
     }
-    a {
+
+    nav a {
+      color: white;
+      margin: 0 15px;
       text-decoration: none;
-      color: #0077cc;
+      font-size: 1.1em;
     }
-    a:hover {
+
+    nav a:hover {
       text-decoration: underline;
     }
-    
+
+    section {
+      padding: 2rem;
+    }
+
+    #projects {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .project-card {
+      border: 1px solid #ddd;
+      padding: 15px;
+      border-radius: 8px;
+      width: 300px;
+      background-color: white;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .project-card h3 {
+      margin-top: 0;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 50px;
+      padding: 20px;
+      background-color: #f8f8f8;
+    }
+
+    footer a {
+      color: #0077cc;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    #audio-player {
+      text-align: center;
+      margin-top: 20px;
+      padding: 20px; /* Add padding for spacing inside the border */
+      border: 2px solid #ddd; /* Add a border */
+      border-radius: 8px; /* Optional: Rounded corners */
+      background-color: #fff; /* Optional: Background color for contrast */
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+    }
+
+    #audio-player input[type="range"] {
+      width: 80%;
+      margin-top: 10px;
+    }
   </style>
 </head>
 <body>
   <header>
     <h1>Milan Zilka</h1>
-    <p>Vítam Vás na mojej GitHub stránke. Nižšie nájdete ukážky mojich fun projektov.</p>
-    <!-- CV Icon -->
+    <p>Software Developer | Passionate about Web Development and Fun Projects</p>
     <a href="cv/cv.html" target="_blank" title="Zobraziť môj životopis">
       <img src="cv-icon.png" alt="CV Icon" style="width: 40px; height: 40px; margin-top: 10px;">
     </a>
   </header>
+
+  <nav>
+    <a href="#projects">Projekty</a>
+    <a href="cv/cv.html" target="_blank">Životopis</a>
+    <a href="#contact">Kontakt</a>
+  </nav>
+
   <div id="audio-player">
-  <h2 id="track-title">Názov skladby</h2>
-  <audio id="audio" src="audio/NIVIRO - NCS New Years Mix 2024 (with NIVIRO) [NCS Release].mp3"></audio>
-  <div>
-    <button id="prev">⏮️</button>
-    <button id="play-pause">▶️</button>
-    <button id="next">⏭️</button>
+    <h2 id="track-title">Názov skladby</h2>
+    <audio id="audio" src="audio/NIVIRO - NCS New Years Mix 2024 (with NIVIRO) [NCS Release].mp3"></audio>
+    <div>
+      <button id="prev">⏮️</button>
+      <button id="play-pause">▶️</button>
+      <button id="next">⏭️</button>
     </div>
-</div>
-<p>
-  Song: NCS New Years Mix 2024 (with NIVIRO)<br>
-  Music provided by NoCopyrightSounds<br>
-  Free Download/Stream: http://ncs.io/NYE24<br>
-  Watch: http://ncs.lnk.to/NYE24AT/youtube <br>
-</p>
-  <section>
+    <input type="range" id="progress-bar" value="0" max="100">
+  </div>
+
+  <section id="projects">
     <h2>Projekty</h2>
-    <ul>
-      <li>
-        <strong>Tracker Demo</strong><br>
-        <a href="https://z0lk01.github.io/tracker_demo/" target="_blank">Zobraziť projekt</a>
-      </li>
-      <li>
-        <strong>Sauce Demo</strong><br>
-        <a href="https://z0lk01.github.io/Sauce_demo/" target="_blank">Zobraziť projekt</a>
-      </li>
-    </ul>
+    <div class="project-card">
+      <h3>Tracker Demo</h3>
+      <p>A simple tracker application to manage tasks.</p>
+      <a href="https://z0lk01.github.io/tracker_demo/" target="_blank">Zobraziť projekt</a>
+    </div>
+    <div class="project-card">
+      <h3>Sauce Demo</h3>
+      <p>A demo project showcasing sauce recipes.</p>
+      <a href="https://z0lk01.github.io/Sauce_demo/" target="_blank">Zobraziť projekt</a>
+    </div>
   </section>
+
+  <section id="contact">
+    <h2>Kontakt</h2>
+    <p>Email: <a href="mailto:milan.zilka@example.com">milan.zilka@example.com</a></p>
+  </section>
+
+  <footer>
+    <p>© 2025 Milan Zilka</p>
+    <a href="https://github.com/mzilka" target="_blank">GitHub</a> |
+    <a href="https://www.linkedin.com/in/mzilka" target="_blank">LinkedIn</a>
+  </footer>
+
   <script>
-  const audio = document.getElementById('audio');
-  const title = document.getElementById('track-title');
-  const playPauseBtn = document.getElementById('play-pause');
-  const prevBtn = document.getElementById('prev');
-  const nextBtn = document.getElementById('next');
+    const audio = document.getElementById('audio');
+    const title = document.getElementById('track-title');
+    const playPauseBtn = document.getElementById('play-pause');
+    const prevBtn = document.getElementById('prev');
+    const nextBtn = document.getElementById('next');
+    const progressBar = document.getElementById('progress-bar');
 
-  const tracks = [
-    { title: 'NCS New Years Mix 2024', src: 'audio/NIVIRO - NCS New Years Mix 2024 (with NIVIRO) [NCS Release].mp3' },
-    
-  ];
-  let currentTrack = 0;
+    const tracks = [
+      { title: 'NCS New Years Mix 2024', src: 'audio/NIVIRO - NCS New Years Mix 2024 (with NIVIRO) [NCS Release].mp3' },
+    ];
+    let currentTrack = 0;
 
-  function loadTrack(index) {
-    const track = tracks[index];
-    audio.src = track.src;
-    title.textContent = track.title;
-  }
-
-  function playPause() {
-    if (audio.paused) {
-      audio.play();
-      playPauseBtn.textContent = '⏸️';
-    } else {
-      audio.pause();
-      playPauseBtn.textContent = '▶️';
+    function loadTrack(index) {
+      const track = tracks[index];
+      audio.src = track.src;
+      title.textContent = track.title;
     }
-  }
 
-  function prevTrack() {
-    currentTrack = (currentTrack - 1 + tracks.length) % tracks.length;
+    function playPause() {
+      if (audio.paused) {
+        audio.play();
+        playPauseBtn.textContent = '⏸️';
+      } else {
+        audio.pause();
+        playPauseBtn.textContent = '▶️';
+      }
+    }
+
+    function prevTrack() {
+      currentTrack = (currentTrack - 1 + tracks.length) % tracks.length;
+      loadTrack(currentTrack);
+      audio.play();
+    }
+
+    function nextTrack() {
+      currentTrack = (currentTrack + 1) % tracks.length;
+      loadTrack(currentTrack);
+      audio.play();
+    }
+
+    function updateProgressBar() {
+      progressBar.value = (audio.currentTime / audio.duration) * 100 || 0;
+    }
+
+    playPauseBtn.addEventListener('click', playPause);
+    prevBtn.addEventListener('click', prevTrack);
+    nextBtn.addEventListener('click', nextTrack);
+    audio.addEventListener('timeupdate', updateProgressBar);
+
     loadTrack(currentTrack);
-    audio.play();
-  }
-
-  function nextTrack() {
-    currentTrack = (currentTrack + 1) % tracks.length;
-    loadTrack(currentTrack);
-    audio.play();
-  }
-
-  playPauseBtn.addEventListener('click', playPause);
-  prevBtn.addEventListener('click', prevTrack);
-  nextBtn.addEventListener('click', nextTrack);
-
-  // Na začiatku načítaj prvú skladbu
-  loadTrack(currentTrack);
-</script>
-
+  </script>
 </body>
 </html>
