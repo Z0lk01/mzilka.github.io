@@ -150,6 +150,29 @@
       height: 12px;
       cursor: pointer;
     }
+
+    /* Ensure the body and html take up the full height of the viewport */
+    html, body {
+      height: 100%;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Main content area should take up all available space */
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: row; /* Allows for side-by-side layout if needed */
+    }
+
+    /* Footer stays at the bottom */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.8); /* Optional: Semi-transparent background */
+      box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Optional: Subtle shadow */
+    }
   </style>
 </head>
 <body>
@@ -167,37 +190,39 @@
     <a href="#contact">Kontakt</a>
   </nav>
 
-  <div id="audio-player">
-    <h2 id="track-title">Názov skladby</h2>
-    <audio id="audio" src="audio/NIVIRO - NCS New Years Mix 2024 (with NIVIRO) [NCS Release].mp3"></audio>
-    <div>
-      <button id="prev" title="Previous Track"><i class="fas fa-backward"></i></button>
-      <button id="play-pause" title="Play/Pause"><i class="fas fa-play"></i></button>
-      <button id="next" title="Next Track"><i class="fas fa-forward"></i></button>
+  <main>
+    <div id="audio-player">
+      <h2 id="track-title">Názov skladby</h2>
+      <audio id="audio" src="audio/NIVIRO - NCS New Years Mix 2024 (with NIVIRO) [NCS Release].mp3"></audio>
+      <div>
+        <button id="prev" title="Previous Track"><i class="fas fa-backward"></i></button>
+        <button id="play-pause" title="Play/Pause"><i class="fas fa-play"></i></button>
+        <button id="next" title="Next Track"><i class="fas fa-forward"></i></button>
+      </div>
+      <input type="range" id="progress-bar" value="0" max="100">
+      <div id="volume-container">
+        <img src="volume.png" alt="Volume Icon" id="volume-icon">
+        <input type="range" id="volume-control" min="0" max="1" step="0.1" value="1" title="Volume">
+      </div>
     </div>
-    <input type="range" id="progress-bar" value="0" max="100">
-    <div id="volume-container">
-      <img src="volume.png" alt="Volume Icon" id="volume-icon">
-      <input type="range" id="volume-control" min="0" max="1" step="0.1" value="1" title="Volume">
-    </div>
-  </div>
 
-  <section id="projects">
-    <h2>
-      <img src="projects.png" alt="Projects Icon" style="width: 24px; height: 24px; vertical-align: middle; margin-right: 8px;">
-      Projekty
-    </h2>
-    <div class="project-card">
-      <h3>Tracker Demo</h3>
-      <p>A simple tracker application to manage tasks.</p>
-      <a href="https://z0lk01.github.io/tracker_demo/" target="_blank">Zobraziť projekt</a>
-    </div>
-    <div class="project-card">
-      <h3>Sauce Demo</h3>
-      <p>A demo project showcasing sauce recipes.</p>
-      <a href="https://z0lk01.github.io/Sauce_demo/" target="_blank">Zobraziť projekt</a>
-    </div>
-  </section>
+    <section id="projects">
+      <h2>
+        <img src="projects.png" alt="Projects Icon" style="width: 24px; height: 24px; vertical-align: middle; margin-right: 8px;">
+        Projekty
+      </h2>
+      <div class="project-card">
+        <h3>Tracker Demo</h3>
+        <p>A simple tracker application to manage tasks.</p>
+        <a href="https://z0lk01.github.io/tracker_demo/" target="_blank">Zobraziť projekt</a>
+      </div>
+      <div class="project-card">
+        <h3>Sauce Demo</h3>
+        <p>A demo project showcasing sauce recipes.</p>
+        <a href="https://z0lk01.github.io/Sauce_demo/" target="_blank">Zobraziť projekt</a>
+      </div>
+    </section>
+  </main>
 
   <footer>
     <p>© 2025 Milan Zilka</p>
