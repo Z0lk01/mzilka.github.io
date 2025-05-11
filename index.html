@@ -18,24 +18,12 @@
     header {
       text-align: center;
       padding: 2rem;
-      background-color: #0077cc;
       color: white;
-    }
-
-    header h1 {
-      font-size: 2.5em;
-      margin-bottom: 0.5em;
-    }
-
-    header p {
-      font-size: 1.2em;
-      margin-bottom: 1em;
     }
 
     nav {
       text-align: center;
       margin-bottom: 20px;
-      background-color: #0056a3;
       padding: 10px 0;
     }
 
@@ -66,7 +54,7 @@
       border: 1px solid #ddd;
       padding: 15px;
       border-radius: 8px;
-      background-color: white;
+      background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white for readability */
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
       margin-bottom: 20px; /* Add spacing between project cards */
     }
@@ -75,7 +63,6 @@
       text-align: center;
       margin-top: 50px;
       padding: 20px;
-      background-color: #f8f8f8;
     }
 
     footer a {
@@ -88,17 +75,19 @@
     }
 
     #audio-player {
+      width: 300px; /* Make the audio player smaller */
       text-align: center;
-      margin-top: 20px;
-      padding: 20px; /* Add padding for spacing inside the border */
+      margin: 20px; /* Add some spacing around the player */
+      padding: 10px; /* Reduce padding */
       border: 2px solid #ddd; /* Add a border */
-      border-radius: 8px; /* Optional: Rounded corners */
-      background-color: #fff; /* Optional: Background color for contrast */
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+      border-radius: 8px; /* Rounded corners */
+      background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white for contrast */
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+      float: left; /* Move the audio player to the left side */
     }
 
     #audio-player input[type="range"] {
-      width: 80%;
+      width: 90%; /* Adjust the width of the progress bar */
       margin-top: 10px;
     }
 
@@ -118,17 +107,17 @@
     #volume-container {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 5px; /* Reduce spacing between volume icon and slider */
       margin-top: 10px;
     }
 
     #volume-icon {
-      width: 20px;
-      height: 20px;
+      width: 16px; /* Make the volume icon smaller */
+      height: 16px;
     }
 
     #volume-control {
-      width: 100px; /* Make the slider smaller */
+      width: 80px; /* Make the volume slider smaller */
       background-color: #ddd; /* Light gray background */
       border-radius: 5px; /* Rounded corners */
       outline: none;
