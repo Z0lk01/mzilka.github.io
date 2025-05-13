@@ -74,7 +74,7 @@
     footer a:hover {
       text-decoration: underline;
     }    #audio-player {
-      height: 180px; /* Set a fixed height for the audio player */
+      /*height: 200px; /* Set a fixed height for the audio player */
       width: 300px; /* Make the audio player smaller */
       text-align: center;
       margin: 20px; /* Add some spacing around the player */
@@ -177,10 +177,7 @@
 </head>
 <body>  <header>
     <h1>Milan Zilka</h1>
-    <p>Software Developer | Passionate about Web Development and Fun Projects</p>
-    <a href="cv/cv.html" target="_blank" title="Zobraziť môj životopis">
-      <img src="cv-icon.png" alt="CV Icon" style="width: 40px; height: 40px; margin-top: 10px;">
-    </a>
+    <p>Senior support and QA tester | Passionate about testing development and all tech</p>
     <div id="audio-player">
       <h2 id="track-title">Názov skladby</h2>
       <audio id="audio" src="audio/NIVIRO - NCS New Years Mix 2024 (with NIVIRO) [NCS Release].mp3"></audio>
@@ -194,6 +191,12 @@
         <img src="volume.png" alt="Volume Icon" id="volume-icon">
         <input type="range" id="volume-control" min="0" max="1" step="0.1" value="1" title="Volume">
       </div>
+      <p id="song-description" style="font-size: 0.9em; color: #ccc; margin-top: 10px;">
+        Description: Song: NCS New Years Mix 2024 (with NIVIRO)
+        Music provided by NoCopyrightSounds
+        Free Download/Stream: http://ncs.io/NYE24
+        Watch: http://ncs.lnk.to/NYE24AT/youtube
+      </p>
     </div>
   </header>
 
