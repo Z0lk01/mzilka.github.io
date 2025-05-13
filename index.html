@@ -72,19 +72,17 @@
 
     footer a:hover {
       text-decoration: underline;
-    }
-
-    #audio-player {
+    }    #audio-player {
       height: 180px; /* Set a fixed height for the audio player */
       width: 300px; /* Make the audio player smaller */
       text-align: center;
-      margin: 20px; /* Add some spacing around the player */
+      margin: 20px auto; /* Center the player horizontally and add vertical spacing */
       padding: 10px; /* Reduce padding */
       border: 2px solid #ddd; /* Add a border */
       border-radius: 8px; /* Rounded corners */
       background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white for contrast */
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-      float: left; /* Move the audio player to the left side */
+      display: inline-block; /* Display as inline-block instead of floating */
     }
 
     #audio-player input[type="range"] {
@@ -176,22 +174,12 @@
     }
   </style>
 </head>
-<body>
-  <header>
+<body>  <header>
     <h1>Milan Zilka</h1>
     <p>Software Developer | Passionate about Web Development and Fun Projects</p>
     <a href="cv/cv.html" target="_blank" title="Zobraziť môj životopis">
       <img src="cv-icon.png" alt="CV Icon" style="width: 40px; height: 40px; margin-top: 10px;">
     </a>
-  </header>
-
-  <nav>
-    <a href="#projects">Projekty</a>
-    <a href="cv/cv.html" target="_blank">Životopis</a>
-    <a href="#contact">Kontakt</a>
-  </nav>
-
-  <main>
     <div id="audio-player">
       <h2 id="track-title">Názov skladby</h2>
       <audio id="audio" src="audio/NIVIRO - NCS New Years Mix 2024 (with NIVIRO) [NCS Release].mp3"></audio>
@@ -206,6 +194,15 @@
         <input type="range" id="volume-control" min="0" max="1" step="0.1" value="1" title="Volume">
       </div>
     </div>
+  </header>
+
+  <nav>
+    <a href="#projects">Projekty</a>
+    <a href="cv/cv.html" target="_blank">Životopis</a>
+    <a href="#contact">Kontakt</a>
+  </nav>
+
+  <main>
 
     <section id="projects">
       <h2>
