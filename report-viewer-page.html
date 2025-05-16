@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mochawesome Reporty</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f7f7f7;
+      padding: 2rem;
+    }
+    h1 {
+      color: #333;
+    }
+    label, input, button {
+      font-size: 1rem;
+    }
+    iframe {
+      width: 100%;
+      height: 80vh;
+      border: 1px solid #ccc;
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>Mochawesome Reporty</h1>
+
+  <!-- Odkaz na najnovší dostupný report (index.html je vždy najnovšia kópia) -->
+  <p><strong>📄 Najnovší report:</strong> <a href="index.html" target="_blank">Zobraziť posledný test</a></p>
+
+  <!-- Kalendár pre výber dátumu reportu -->
+  <label for="datePicker">📅 Vyber dátum reportu:</label>
+  <input type="date" id="datePicker" max="9999-12-31">
+  <button onclick="loadReport()">Zobraziť</button>
+
+  <!-- Sekcia, ktorá sa zobrazí po výbere dátumu -->
+  <div id="reportFrame" style="display:none;">
+    <h2>Report pre dátum: <span id="selectedDate"></span></h2>
+    <iframe id="reportViewer" src=""></iframe>
+  </div>
+
+  <script>
+    // Funkcia na formátovanie dátumu do názvu reportového súboru
+    function formatDateToFilename(dateString) {
+      const date = new Date(dateString);
+
+      // Pomocná funkcia na doplnenie nulových prefixov (napr. 5 → 05)
+      const pad = (n) => n.toString().padStart(2, '0');
+
+      const yyyy = date.getFullYear();
+      const mm = pad(date.getMonth() + 1); // Mesiace sú číslované od 0
+      const dd = pad(date.getDate());
+
+      // Výstupný názov súboru zodpovedá formátu používanému v report.js
+      return `mochawesome-${yyyy}-${mm}-${dd}_07-00-00.html`;
+    }
+
+    // Funkcia na načítanie a zobrazenie vybraného reportu
+    function loadReport() {
+      const date = document.getElementById('datePicker').value;
+      if (!date) return; // Ak nie je vybraný dátum, nič sa nedeje
+
+      const filename = formatDateToFilename(date);
+      const viewer = document.getElementById('reportViewer');
+      const container = document.getElementById('reportFrame');
+      const label = document.getElementById('selectedDate');
+
+      // Nastavenie zdroja iframe na požadovaný reportový súbor
+      viewer.src = filename;
+      // Zobrazenie vybraného dátumu v nadpise
+      label.textContent = date;
+      // Zviditeľnenie sekcie s iframe
+      container.style.display = 'block';
+    }
+  </script>
+</body>
+</html>
