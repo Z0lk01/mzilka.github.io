@@ -42,36 +42,26 @@
   </div>
 
   <script>
-    // Funkcia na formátovanie dátumu do názvu reportového súboru
-    function formatDateToFilename(dateString) {
-      const date = new Date(dateString);
-
-      // Pomocná funkcia na doplnenie nulových prefixov (napr. 5 → 05)
-      const pad = (n) => n.toString().padStart(2, '0');
-
-      const yyyy = date.getFullYear();
-      const mm = pad(date.getMonth() + 1); // Mesiace sú číslované od 0
-      const dd = pad(date.getDate());
-
-      // Výstupný názov súboru zodpovedá formátu používanému v report.js
-      return `mochawesome-${yyyy}-${mm}-${dd}_07-00-00.html`;
+    // Funkcia na formátovanie dátumu do cesty k reportu
+    function formatDateToFolder(dateString) {
+      return dateString; // dateString is already in YYYY-MM-DD format
     }
 
     // Funkcia na načítanie a zobrazenie vybraného reportu
     function loadReport() {
       const date = document.getElementById('datePicker').value;
-      if (!date) return; // Ak nie je vybraný dátum, nič sa nedeje
+      if (!date) return;
 
-      const filename = formatDateToFilename(date);
+      // Skladanie cesty podľa štruktúry: ../reports/SKVZ_CI/YYYY-MM-DD/index.html
+      const folder = formatDateToFolder(date);
+      const filename = `../reports/SKVZ_CI/${folder}/index.html`;
+
       const viewer = document.getElementById('reportViewer');
       const container = document.getElementById('reportFrame');
       const label = document.getElementById('selectedDate');
 
-      // Nastavenie zdroja iframe na požadovaný reportový súbor
       viewer.src = filename;
-      // Zobrazenie vybraného dátumu v nadpise
       label.textContent = date;
-      // Zviditeľnenie sekcie s iframe
       container.style.display = 'block';
     }
   </script>
